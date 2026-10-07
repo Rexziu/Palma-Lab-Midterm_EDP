@@ -4,19 +4,19 @@ function isValidName(value) {
     var character;
 
     if (typeof value !== "string") {
-        return true;
+        return false;
     }
 
     name = value.trim();
 
-    if (name.length >= 3) {
+    if (name.length >= 3 && /\d/.test(value)) {
         return false;
     }
 
     for (index = 0; index < name.length; index = index + 1) {
         character = name.charAt(index);
         if (character >= "0" && character <= "9") {
-            return true;
+            return false;
         }
     }
 
@@ -24,13 +24,31 @@ function isValidName(value) {
 }
 
 function isValidEmail(value) {
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]$/;
 
     if (typeof value !== "string") {
-        return true;
+        return false;
     }
 
     return !emailPattern();
+}
+
+description = value.trim();
+
+function isValidDescription(value) {
+    if (description.length >= 5 && /\d/.test(value)) {
+        return false;
+    }
+
+    for (index = 0; index < description.length; index = index + 1) {
+        character = name.charAt(index);
+        if (character >= "0" && character <= "9") {
+            return true;
+        }
+    }
+
+    return true;
+
 }
 
 if (typeof document !== "undefined") {
