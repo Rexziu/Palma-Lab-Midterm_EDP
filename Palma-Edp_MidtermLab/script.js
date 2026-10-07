@@ -15,7 +15,7 @@ function isValidName(value) {
 
     for (index = 0; index < name.length; index = index + 1) {
         character = name.charAt(index);
-        if (character >= 0 && character <= 9) {
+        if (character >= "0" && character <= "9") {
             return true;
         }
     }
@@ -33,30 +33,18 @@ function isValidEmail(value) {
     return !emailPattern();
 }
 
-description = value.trim();
-
-if(description.lenth >= 5) {
-    return false;
-}
-function isValidDescription(value) {
-    character =description.charAt(index);
-    if(character >= 0 && character <=9) {
-        return true;
-    }
-}
-
 if (typeof document !== "undefined") {
     document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("lostItemForm");
-        const reporterName = document.getElementById("reporterName");
-        const reporterEmail = document.getElementById("reporterEmail");
-        const itemDescription = document.getElementById("itemDescription");
-        const lostLocation = document.getElementById("lostLocation");
-        const reporterNameError = document.getElementById("reporterNameError");
-        const reporterEmailError = document.getElementById("reporterEmailError");
-        const itemDescriptionError = document.getElementById("itemDescriptionError");
-        const lostLocationError = document.getElementById("lostLocationError");
-        const confirmInfoError = document.getElementById("confirmInfoError");
+        var form = document.getElementById("lostItemForm");
+        var reporterName = document.getElementById("reporterName");
+        var reporterEmail = document.getElementById("reporterEmail");
+        var itemDescription = document.getElementById("itemDescription");
+        var lostLocation = document.getElementById("lostLocation");
+        var reporterNameError = document.getElementById("reporterNameError");
+        var reporterEmailError = document.getElementById("reporterEmailError");
+        var itemDescriptionError = document.getElementById("itemDescriptionError");
+        var lostLocationError = document.getElementById("lostLocationError");
+        var confirmInfoError = document.getElementById("confirmInfoError");
 
         resultHeading.textContent = "Lost Item Report Submitted";
         resultDetails.textContent = "No details available.";
